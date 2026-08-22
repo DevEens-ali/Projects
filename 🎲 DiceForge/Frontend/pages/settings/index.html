@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Settings | DiceForge</title>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/global.css">
+
+    <!-- Settings CSS -->
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         SETTINGS PAGE
+         ===================================================== -->
+
+    <main class="settings-page">
+
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
+
+        <header class="settings-page-header">
+
+            <span class="section-eyebrow">
+                DICEF0RGE CONFIGURATION
+            </span>
+
+            <h1>Settings</h1>
+
+            <p>
+                Customize your DiceForge experience.
+            </p>
+
+        </header>
+
+
+
+        <!-- =================================================
+             SETTINGS LAYOUT
+             ================================================= -->
+
+        <div class="settings-layout">
+
+
+            <!-- =================================================
+                 LEFT NAVIGATION
+                 ================================================= -->
+
+            <aside class="settings-navigation">
+
+                <button
+                    class="settings-nav-item active"
+                    data-tab="general"
+                    type="button"
+                >
+
+                    <span class="settings-nav-icon">
+                        ⚙
+                    </span>
+
+                    <span>
+                        General
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="settings-nav-item"
+                    data-tab="appearance"
+                    type="button"
+                >
+
+                    <span class="settings-nav-icon">
+                        ◉
+                    </span>
+
+                    <span>
+                        Appearance
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="settings-nav-item"
+                    data-tab="dice"
+                    type="button"
+                >
+
+                    <span class="settings-nav-icon">
+                        🎲
+                    </span>
+
+                    <span>
+                        Dice & Rolls
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="settings-nav-item"
+                    data-tab="notifications"
+                    type="button"
+                >
+
+                    <span class="settings-nav-icon">
+                        ♧
+                    </span>
+
+                    <span>
+                        Notifications
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="settings-nav-item"
+                    data-tab="privacy"
+                    type="button"
+                >
+
+                    <span class="settings-nav-icon">
+                        🔒
+                    </span>
+
+                    <span>
+                        Privacy
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="settings-nav-item"
+                    data-tab="data"
+                    type="button"
+                >
+
+                    <span class="settings-nav-icon">
+                        ▤
+                    </span>
+
+                    <span>
+                        Data & History
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="settings-nav-item"
+                    data-tab="about"
+                    type="button"
+                >
+
+                    <span class="settings-nav-icon">
+                        ⓘ
+                    </span>
+
+                    <span>
+                        About
+                    </span>
+
+                </button>
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 MAIN SETTINGS CONTENT
+                 ================================================= -->
+
+            <section class="settings-main">
+
+
+                <!-- =================================================
+                     GENERAL TAB
+                     ================================================= -->
+
+                <div
+                    class="settings-tab-content active"
+                    data-tab-content="general"
+                >
+
+
+                    <!-- PROFILE -->
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>
+                                General Settings
+                            </h2>
+
+                            <p>
+                                Manage your basic DiceForge profile.
+                            </p>
+
+                        </div>
+
+
+                        <div class="profile-section">
+
+                            <div class="profile-header">
+
+                                <div>
+
+                                    <h3>
+                                        Profile
+                                    </h3>
+
+                                    <p>
+                                        This information is displayed
+                                        across your DiceForge account.
+                                    </p>
+
+                                </div>
+
+                                <button
+                                    class="outline-button"
+                                    type="button"
+                                >
+                                    Edit Profile
+                                </button>
+
+                            </div>
+
+
+                            <div class="profile-fields">
+
+
+                                <div class="form-group">
+
+                                    <label for="displayName">
+                                        Display Name
+                                    </label>
+
+                                    <input
+                                        id="displayName"
+                                        type="text"
+                                        value="DiceMaster"
+                                        data-setting="profile.displayName"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="username">
+                                        Username
+                                    </label>
+
+                                    <input
+                                        id="username"
+                                        type="text"
+                                        value="@dicemaster"
+                                        data-setting="profile.username"
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- GENERAL PREFERENCES -->
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>
+                                General Preferences
+                            </h2>
+
+                            <p>
+                                Configure how DiceForge behaves.
+                            </p>
+
+                        </div>
+
+
+                        <div class="preference-grid">
+
+
+                            <div class="preference-item">
+
+                                <div class="preference-icon">
+                                    🎲
+                                </div>
+
+                                <div class="preference-info">
+
+                                    <h3>
+                                        Individual Dice Results
+                                    </h3>
+
+                                    <p>
+                                        Show each dice result separately.
+                                    </p>
+
+                                </div>
+
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        data-setting="dice.individualResults"
+                                        checked
+                                    >
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+
+                            <div class="preference-item">
+
+                                <div class="preference-icon">
+                                    💾
+                                </div>
+
+                                <div class="preference-info">
+
+                                    <h3>
+                                        Auto Save Rolls
+                                    </h3>
+
+                                    <p>
+                                        Automatically save your rolls.
+                                    </p>
+
+                                </div>
+
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        data-setting="dice.autoSave"
+                                        checked
+                                    >
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     APPEARANCE TAB
+                     ================================================= -->
+
+                <div
+                    class="settings-tab-content"
+                    data-tab-content="appearance"
+                >
+
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>
+                                Appearance
+                            </h2>
+
+                            <p>
+                                Customize the look and feel of DiceForge.
+                            </p>
+
+                        </div>
+
+
+                        <div class="appearance-settings">
+
+
+                            <!-- THEME -->
+
+                            <div class="appearance-section">
+
+                                <h3>
+                                    Theme
+                                </h3>
+
+                                <p>
+                                    Choose your preferred interface theme.
+                                </p>
+
+
+                                <div class="theme-options">
+
+
+                                    <button
+                                        class="theme-option active"
+                                        data-theme="dark"
+                                        type="button"
+                                    >
+
+                                        <div class="theme-preview dark-preview">
+
+                                            <div class="preview-sidebar"></div>
+
+                                            <div class="preview-content">
+
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <strong>
+                                            Dark
+                                        </strong>
+
+                                    </button>
+
+
+
+                                    <button
+                                        class="theme-option"
+                                        data-theme="light"
+                                        type="button"
+                                    >
+
+                                        <div class="theme-preview light-preview">
+
+                                            <div class="preview-sidebar"></div>
+
+                                            <div class="preview-content">
+
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <strong>
+                                            Light
+                                        </strong>
+
+                                    </button>
+
+
+
+                                    <button
+                                        class="theme-option"
+                                        data-theme="system"
+                                        type="button"
+                                    >
+
+                                        <div class="theme-preview system-preview">
+
+                                            <div class="preview-sidebar"></div>
+
+                                            <div class="preview-content">
+
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <strong>
+                                            System
+                                        </strong>
+
+                                    </button>
+
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- ACCENT COLORS -->
+
+                            <div class="accent-section">
+
+                                <h3>
+                                    Accent Color
+                                </h3>
+
+                                <p>
+                                    Select your interface accent color.
+                                </p>
+
+
+                                <div class="accent-colors">
+
+
+                                    <button
+                                        class="accent-color purple active"
+                                        data-accent="purple"
+                                        type="button"
+                                        aria-label="Purple"
+                                    ></button>
+
+
+                                    <button
+                                        class="accent-color blue"
+                                        data-accent="blue"
+                                        type="button"
+                                        aria-label="Blue"
+                                    ></button>
+
+
+                                    <button
+                                        class="accent-color green"
+                                        data-accent="green"
+                                        type="button"
+                                        aria-label="Green"
+                                    ></button>
+
+
+                                    <button
+                                        class="accent-color orange"
+                                        data-accent="orange"
+                                        type="button"
+                                        aria-label="Orange"
+                                    ></button>
+
+
+                                    <button
+                                        class="accent-color red"
+                                        data-accent="red"
+                                        type="button"
+                                        aria-label="Red"
+                                    ></button>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DICE TAB
+                     ================================================= -->
+
+                <div
+                    class="settings-tab-content"
+                    data-tab-content="dice"
+                >
+
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>
+                                Dice & Roll Preferences
+                            </h2>
+
+                            <p>
+                                Configure how dice rolls work.
+                            </p>
+
+                        </div>
+
+
+                        <div class="preference-grid">
+
+
+                            <div class="preference-item">
+
+                                <div class="preference-icon">
+                                    ✨
+                                </div>
+
+                                <div class="preference-info">
+
+                                    <h3>
+                                        Roll Animation
+                                    </h3>
+
+                                    <p>
+                                        Play dice animation during rolls.
+                                    </p>
+
+                                </div>
+
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        data-setting="dice.animation"
+                                        checked
+                                    >
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+
+                            <div class="preference-item">
+
+                                <div class="preference-icon">
+                                    🔊
+                                </div>
+
+                                <div class="preference-info">
+
+                                    <h3>
+                                        Sound Effects
+                                    </h3>
+
+                                    <p>
+                                        Play sound when dice are rolled.
+                                    </p>
+
+                                </div>
+
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        data-setting="dice.sound"
+                                        checked
+                                    >
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- DEFAULT ROLL CONFIG -->
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>
+                                Default Roll Configuration
+                            </h2>
+
+                            <p>
+                                Configure your default dice setup.
+                            </p>
+
+                        </div>
+
+
+                        <div class="roll-configuration">
+
+
+                            <div class="form-group">
+
+                                <label for="defaultDice">
+                                    Default Dice
+                                </label>
+
+                                <select
+                                    id="defaultDice"
+                                    data-setting="dice.defaultDice"
+                                >
+
+                                    <option value="D4">
+                                        D4
+                                    </option>
+
+                                    <option
+                                        value="D6"
+                                        selected
+                                    >
+                                        D6
+                                    </option>
+
+                                    <option value="D8">
+                                        D8
+                                    </option>
+
+                                    <option value="D10">
+                                        D10
+                                    </option>
+
+                                    <option value="D12">
+                                        D12
+                                    </option>
+
+                                    <option value="D20">
+                                        D20
+                                    </option>
+
+                                    <option value="D100">
+                                        D100
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Number of Dice
+                                </label>
+
+                                <div
+                                    class="number-control"
+                                    data-control="number-of-dice"
+                                >
+
+                                    <button
+                                        type="button"
+                                        data-action="minus"
+                                    >
+                                        −
+                                    </button>
+
+                                    <span data-value>
+                                        1
+                                    </span>
+
+                                    <button
+                                        type="button"
+                                        data-action="plus"
+                                    >
+                                        +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Modifier
+                                </label>
+
+                                <div
+                                    class="number-control"
+                                    data-control="modifier"
+                                >
+
+                                    <button
+                                        type="button"
+                                        data-action="minus"
+                                    >
+                                        −
+                                    </button>
+
+                                    <span data-value>
+                                        + 0
+                                    </span>
+
+                                    <button
+                                        type="button"
+                                        data-action="plus"
+                                    >
+                                        +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="preset">
+                                    Preset
+                                </label>
+
+                                <select
+                                    id="preset"
+                                    data-setting="dice.preset"
+                                >
+
+                                    <option value="None">
+                                        None
+                                    </option>
+
+                                    <option value="D&D">
+                                        D&D
+                                    </option>
+
+                                    <option value="Critical">
+                                        Critical
+                                    </option>
+
+                                    <option value="Custom">
+                                        Custom
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     NOTIFICATIONS TAB
+                     ================================================= -->
+
+                <div
+                    class="settings-tab-content"
+                    data-tab-content="notifications"
+                >
+
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>
+                                Notifications
+                            </h2>
+
+                            <p>
+                                Choose which notifications you want to receive.
+                            </p>
+
+                        </div>
+
+
+                        <div class="notification-list">
+
+
+                            <div class="preference-item">
+
+                                <div class="preference-icon">
+                                    🎲
+                                </div>
+
+                                <div class="preference-info">
+
+                                    <h3>
+                                        Roll Completed
+                                    </h3>
+
+                                    <p>
+                                        Notify me after every completed roll.
+                                    </p>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        data-setting="notifications.rollCompleted"
+                                        checked
+                                    >
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+
+                            <div class="preference-item">
+
+                                <div class="preference-icon">
+                                    🏆
+                                </div>
+
+                                <div class="preference-info">
+
+                                    <h3>
+                                        Achievements
+                                    </h3>
+
+                                    <p>
+                                        Notify me when I unlock achievements.
+                                    </p>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        data-setting="notifications.achievement"
+                                        checked
+                                    >
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+
+                            <div class="preference-item">
+
+                                <div class="preference-icon">
+                                    📊
+                                </div>
+
+                                <div class="preference-info">
+
+                                    <h3>
+                                        Statistics
+                                    </h3>
+
+                                    <p>
+                                        Notify me about important statistics.
+                                    </p>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        data-setting="notifications.statistics"
+                                    >
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+
+                            <div class="preference-item">
+
+                                <div class="preference-icon">
+                                    📅
+                                </div>
+
+                                <div class="preference-info">
+
+                                    <h3>
+                                        Weekly Summary
+                                    </h3>
+
+                                    <p>
+                                        Receive a weekly activity summary.
+                                    </p>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        data-setting="notifications.weeklySummary"
+                                        checked
+                                    >
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PRIVACY TAB
+                     ================================================= -->
+
+                <div
+                    class="settings-tab-content"
+                    data-tab-content="privacy"
+                >
+
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>
+                                Privacy
+                            </h2>
+
+                            <p>
+                                Control how DiceForge stores and uses your data.
+                            </p>
+
+                        </div>
+
+
+                        <div class="preference-grid">
+
+
+                            <div class="preference-item">
+
+                                <div class="preference-icon">
+                                    💾
+                                </div>
+
+                                <div class="preference-info">
+
+                                    <h3>
+                                        Save Roll Data
+                                    </h3>
+
+                                    <p>
+                                        Store your roll history locally.
+                                    </p>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        data-setting="privacy.saveRollData"
+                                        checked
+                                    >
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+
+                            <div class="preference-item">
+
+                                <div class="preference-icon">
+                                    📈
+                                </div>
+
+                                <div class="preference-info">
+
+                                    <h3>
+                                        Usage Analytics
+                                    </h3>
+
+                                    <p>
+                                        Help improve DiceForge through anonymous analytics.
+                                    </p>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        data-setting="privacy.analytics"
+                                    >
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+
+                            <div class="preference-item">
+
+                                <div class="preference-icon">
+                                    🖥
+                                </div>
+
+                                <div class="preference-info">
+
+                                    <h3>
+                                        Local Storage
+                                    </h3>
+
+                                    <p>
+                                        Keep preferences stored in your browser.
+                                    </p>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        data-setting="privacy.localStorage"
+                                        checked
+                                    >
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DATA TAB
+                     ================================================= -->
+
+                <div
+                    class="settings-tab-content"
+                    data-tab-content="data"
+                >
+
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>
+                                Data & History
+                            </h2>
+
+                            <p>
+                                Manage your stored DiceForge data.
+                            </p>
+
+                        </div>
+
+
+                        <div class="data-management">
+
+
+                            <div class="data-stat">
+
+                                <span>
+                                    Total Saved Rolls
+                                </span>
+
+                                <strong>
+                                    128
+                                </strong>
+
+                            </div>
+
+
+
+                            <div class="data-action">
+
+                                <div>
+
+                                    <h3>
+                                        Export Roll History
+                                    </h3>
+
+                                    <p>
+                                        Download your roll history.
+                                    </p>
+
+                                </div>
+
+                                <button
+                                    class="outline-button"
+                                    type="button"
+                                >
+                                    Export
+                                </button>
+
+                            </div>
+
+
+
+                            <div class="data-action danger-action">
+
+                                <div>
+
+                                    <h3>
+                                        Clear Roll History
+                                    </h3>
+
+                                    <p>
+                                        Permanently delete all saved rolls.
+                                    </p>
+
+                                    <small>
+                                        This action cannot be undone.
+                                    </small>
+
+                                </div>
+
+                                <button
+                                    class="danger-button"
+                                    type="button"
+                                >
+                                    Clear
+                                </button>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ABOUT TAB
+                     ================================================= -->
+
+                <div
+                    class="settings-tab-content"
+                    data-tab-content="about"
+                >
+
+
+                    <div class="settings-card">
+
+                        <div class="about-settings-content">
+
+                            <div class="about-logo">
+                                🎲
+                            </div>
+
+                            <h3>
+                                DiceForge
+                            </h3>
+
+                            <p>
+                                Roll. Forge. Conquer.
+                            </p>
+
+                            <span>
+                                Version 1.0.0
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>
+                                About DiceForge
+                            </h2>
+
+                            <p>
+                                A modern dice rolling and statistics platform.
+                            </p>
+
+                        </div>
+
+
+                        <div class="placeholder-content">
+
+                            <span>
+                                ⚒
+                            </span>
+
+                            <h3>
+                                Built for Dice Masters
+                            </h3>
+
+                            <p>
+                                DiceForge provides powerful dice rolling,
+                                history tracking and statistics in one
+                                elegant interface.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RIGHT COLUMN
+                 ================================================= -->
+
+            <aside class="settings-right-column">
+
+
+                <!-- NOTIFICATIONS -->
+
+                <div class="settings-card compact-card">
+
+                    <div class="settings-card-header">
+
+                        <h2>
+                            Quick Notifications
+                        </h2>
+
+                        <p>
+                            Notification preferences.
+                        </p>
+
+                    </div>
+
+
+                    <div class="compact-options">
+
+
+                        <div class="compact-option">
+
+                            <div>
+
+                                <strong>
+                                    Roll Completed
+                                </strong>
+
+                                <span>
+                                    Show roll notifications
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    data-setting="notifications.rollCompleted"
+                                    checked
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <div class="compact-option">
+
+                            <div>
+
+                                <strong>
+                                    Achievements
+                                </strong>
+
+                                <span>
+                                    Achievement alerts
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    data-setting="notifications.achievement"
+                                    checked
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <div class="compact-option">
+
+                            <div>
+
+                                <strong>
+                                    Weekly Summary
+                                </strong>
+
+                                <span>
+                                    Weekly activity report
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    data-setting="notifications.weeklySummary"
+                                    checked
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DATA SUMMARY -->
+
+                <div class="settings-card compact-card">
+
+                    <div class="settings-card-header">
+
+                        <h2>
+                            Data Summary
+                        </h2>
+
+                        <p>
+                            Your DiceForge activity.
+                        </p>
+
+                    </div>
+
+
+                    <div class="data-summary">
+
+                        <div class="saved-rolls">
+
+                            <span>
+                                Saved Rolls
+                            </span>
+
+                            <strong>
+                                128
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            class="outline-button"
+                            type="button"
+                        >
+                            Export Data
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ABOUT -->
+
+                <div class="settings-card compact-card">
+
+                    <div class="settings-card-header">
+
+                        <h2>
+                            DiceForge
+                        </h2>
+
+                        <p>
+                            Your personal dice companion.
+                        </p>
+
+                    </div>
+
+
+                    <div class="data-summary">
+
+                        <div class="saved-rolls">
+
+                            <span>
+                                Version
+                            </span>
+
+                            <strong>
+                                1.0.0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </aside>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             SAVE BAR
+             ================================================= -->
+
+        <div class="settings-save-bar">
+
+            <div class="unsaved-message">
+
+                <span>
+                    ●
+                </span>
+
+                <span>
+                    You have unsaved changes
+                </span>
+
+            </div>
+
+
+            <div class="save-actions">
+
+                <button
+                    class="cancel-button"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    class="save-button"
+                    type="button"
+                >
+                    Save Changes
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RESET SETTINGS
+             ================================================= -->
+
+        <div class="reset-settings-card">
+
+            <div>
+
+                <h3>
+                    Reset Settings
+                </h3>
+
+                <p>
+                    Restore all DiceForge settings to their default values.
+                </p>
+
+            </div>
+
+
+            <button
+                class="danger-button"
+                type="button"
+            >
+                Reset Everything
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="settings-footer">
+
+
+            <div class="footer-brand">
+
+                <strong>
+                    DICEF0RGE
+                </strong>
+
+                <span>
+                    Roll. Forge. Conquer.
+                </span>
+
+            </div>
+
+
+            <nav class="footer-navigation">
+
+                <a href="../../pages/home/index.html">
+                    Home
+                </a>
+
+                <a href="../../pages/about/index.html">
+                    About
+                </a>
+
+                <a href="../../pages/history/index.html">
+                    History
+                </a>
+
+                <a href="../../pages/statistics/index.html">
+                    Statistics
+                </a>
+
+            </nav>
+
+
+            <div class="footer-message">
+
+                <span>
+                    Crafted for dice enthusiasts
+                </span>
+
+                <span>
+                    🎲
+                </span>
+
+            </div>
+
+
+            <div class="footer-copyright">
+
+                © 2026 DiceForge. All rights reserved.
+
+            </div>
+
+
+        </footer>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SETTINGS JAVASCRIPT
+         ===================================================== -->
+
+    <script src="../../js/utils.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="settings.js"></script>
+
+</body>
+
+</html>
