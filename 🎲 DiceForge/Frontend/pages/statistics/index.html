@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- =================================
+         DOCUMENT SETTINGS
+         ================================= -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Statistics | DiceForge</title>
+
+
+    <!-- =================================
+         GLOBAL CSS
+         ================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/reset.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+
+    <!-- =================================
+         COMPONENT CSS
+         ================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../../components/sidebar/sidebar.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../components/header/header.css"
+    >
+
+
+    <!-- =================================
+         PAGE CSS
+         ================================= -->
+
+    <link
+        rel="stylesheet"
+        href="statistics.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         SIDEBAR
+         ================================= -->
+
+    <div id="sidebar-container"></div>
+
+
+    <!-- =================================
+         MAIN APPLICATION
+         ================================= -->
+
+    <main class="app-main">
+
+
+        <!-- =================================
+             HEADER
+             ================================= -->
+
+        <div id="header-container"></div>
+
+
+        <!-- =================================
+             PAGE CONTENT
+             ================================= -->
+
+        <section class="page-content">
+
+
+            <div class="statistics-page">
+
+
+                <!-- =================================
+                     PAGE INTRO
+                     ================================= -->
+
+                <div class="statistics-intro">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            YOUR PERFORMANCE
+                        </span>
+
+                        <h1 class="statistics-title">
+                            Statistics
+                        </h1>
+
+                        <p class="statistics-description">
+                            Analyze your rolls, discover patterns,
+                            and measure your luck.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="../roll-dice/index.html"
+                        class="statistics-roll-button"
+                    >
+                        🎲 Roll Dice
+                    </a>
+
+                </div>
+
+
+                <!-- =================================
+                     STAT SUMMARY
+                     ================================= -->
+
+                <div class="statistics-summary">
+
+
+                    <!-- Total Rolls -->
+
+                    <article class="stat-summary-card">
+
+                        <div class="stat-summary-icon">
+                            🎲
+                        </div>
+
+                        <div class="stat-summary-content">
+
+                            <span>
+                                TOTAL ROLLS
+                            </span>
+
+                            <strong id="total-rolls">
+                                128
+                            </strong>
+
+                            <small>
+                                All time
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Average -->
+
+                    <article class="stat-summary-card">
+
+                        <div class="stat-summary-icon">
+                            📈
+                        </div>
+
+                        <div class="stat-summary-content">
+
+                            <span>
+                                AVERAGE ROLL
+                            </span>
+
+                            <strong id="average-roll">
+                                11.4
+                            </strong>
+
+                            <small>
+                                Across all dice
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Best Roll -->
+
+                    <article class="stat-summary-card">
+
+                        <div class="stat-summary-icon">
+                            🏆
+                        </div>
+
+                        <div class="stat-summary-content">
+
+                            <span>
+                                BEST ROLL
+                            </span>
+
+                            <strong id="best-roll">
+                                20
+                            </strong>
+
+                            <small>
+                                Highest result
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Luck Score -->
+
+                    <article class="stat-summary-card">
+
+                        <div class="stat-summary-icon">
+                            ✨
+                        </div>
+
+                        <div class="stat-summary-content">
+
+                            <span>
+                                LUCK SCORE
+                            </span>
+
+                            <strong id="luck-score">
+                                78%
+                            </strong>
+
+                            <small>
+                                Your current luck
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- =================================
+                     ROLL PERFORMANCE CHART
+                     ================================= -->
+
+                <article class="chart-card chart-card-large">
+
+
+                    <div class="chart-card-header">
+
+                        <div>
+
+                            <span class="chart-eyebrow">
+                                PERFORMANCE
+                            </span>
+
+                            <h2>
+                                Roll Performance
+                            </h2>
+
+                            <p>
+                                Your recent roll results over time.
+                            </p>
+
+                        </div>
+
+
+                        <div class="chart-period">
+
+                            <button
+                                class="period-button active"
+                                data-period="all"
+                                type="button"
+                            >
+                                All
+                            </button>
+
+                            <button
+                                class="period-button"
+                                data-period="30"
+                                type="button"
+                            >
+                                30
+                            </button>
+
+                            <button
+                                class="period-button"
+                                data-period="7"
+                                type="button"
+                            >
+                                7
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+                        <canvas
+                            id="performance-chart"
+                        ></canvas>
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- =================================
+                     SECOND CHART ROW
+                     ================================= -->
+
+                <div class="statistics-chart-grid">
+
+
+                    <!-- =================================
+                         DICE USAGE
+                         ================================= -->
+
+                    <article class="chart-card">
+
+
+                        <div class="chart-card-header">
+
+                            <div>
+
+                                <span class="chart-eyebrow">
+                                    DICE
+                                </span>
+
+                                <h2>
+                                    Dice Usage
+                                </h2>
+
+                                <p>
+                                    Which dice you roll the most.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container chart-container-medium">
+
+                            <canvas
+                                id="dice-usage-chart"
+                            ></canvas>
+
+                        </div>
+
+
+                    </article>
+
+
+                    <!-- =================================
+                         RESULT DISTRIBUTION
+                         ================================= -->
+
+                    <article class="chart-card">
+
+
+                        <div class="chart-card-header">
+
+                            <div>
+
+                                <span class="chart-eyebrow">
+                                    DISTRIBUTION
+                                </span>
+
+                                <h2>
+                                    Result Distribution
+                                </h2>
+
+                                <p>
+                                    Frequency of your roll results.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container chart-container-medium">
+
+                            <canvas
+                                id="distribution-chart"
+                            ></canvas>
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- =================================
+                     ROLL BREAKDOWN
+                     ================================= -->
+
+                <article class="chart-card breakdown-card">
+
+
+                    <div class="chart-card-header">
+
+                        <div>
+
+                            <span class="chart-eyebrow">
+                                BREAKDOWN
+                            </span>
+
+                            <h2>
+                                Dice Breakdown
+                            </h2>
+
+                            <p>
+                                Your performance across different dice.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dice-breakdown">
+
+
+                        <!-- D4 -->
+
+                        <div class="breakdown-item">
+
+                            <div class="breakdown-info">
+
+                                <div class="breakdown-dice">
+                                    D4
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        D4
+                                    </strong>
+
+                                    <span>
+                                        18 rolls
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="breakdown-stat">
+
+                                <strong>
+                                    2.4
+                                </strong>
+
+                                <span>
+                                    Average
+                                </span>
+
+                            </div>
+
+
+                            <div class="breakdown-bar">
+
+                                <div
+                                    class="breakdown-progress"
+                                    style="width: 35%;"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- D6 -->
+
+                        <div class="breakdown-item">
+
+                            <div class="breakdown-info">
+
+                                <div class="breakdown-dice">
+                                    D6
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        D6
+                                    </strong>
+
+                                    <span>
+                                        31 rolls
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="breakdown-stat">
+
+                                <strong>
+                                    3.8
+                                </strong>
+
+                                <span>
+                                    Average
+                                </span>
+
+                            </div>
+
+
+                            <div class="breakdown-bar">
+
+                                <div
+                                    class="breakdown-progress"
+                                    style="width: 58%;"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- D8 -->
+
+                        <div class="breakdown-item">
+
+                            <div class="breakdown-info">
+
+                                <div class="breakdown-dice">
+                                    D8
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        D8
+                                    </strong>
+
+                                    <span>
+                                        22 rolls
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="breakdown-stat">
+
+                                <strong>
+                                    5.1
+                                </strong>
+
+                                <span>
+                                    Average
+                                </span>
+
+                            </div>
+
+
+                            <div class="breakdown-bar">
+
+                                <div
+                                    class="breakdown-progress"
+                                    style="width: 45%;"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- D12 -->
+
+                        <div class="breakdown-item">
+
+                            <div class="breakdown-info">
+
+                                <div class="breakdown-dice">
+                                    D12
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        D12
+                                    </strong>
+
+                                    <span>
+                                        25 rolls
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="breakdown-stat">
+
+                                <strong>
+                                    7.2
+                                </strong>
+
+                                <span>
+                                    Average
+                                </span>
+
+                            </div>
+
+
+                            <div class="breakdown-bar">
+
+                                <div
+                                    class="breakdown-progress"
+                                    style="width: 65%;"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- D20 -->
+
+                        <div class="breakdown-item">
+
+                            <div class="breakdown-info">
+
+                                <div class="breakdown-dice">
+                                    D20
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        D20
+                                    </strong>
+
+                                    <span>
+                                        32 rolls
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="breakdown-stat">
+
+                                <strong>
+                                    12.7
+                                </strong>
+
+                                <span>
+                                    Average
+                                </span>
+
+                            </div>
+
+
+                            <div class="breakdown-bar">
+
+                                <div
+                                    class="breakdown-progress"
+                                    style="width: 82%;"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- =================================
+                     INSIGHTS
+                     ================================= -->
+
+                <article class="insights-card">
+
+
+                    <div class="insights-icon">
+                        ✨
+                    </div>
+
+
+                    <div class="insights-content">
+
+                        <span class="chart-eyebrow">
+                            ROLLING INSIGHTS
+                        </span>
+
+                        <h2>
+                            Your Forge Report
+                        </h2>
+
+                        <p>
+                            You seem to favor the D20. Your average
+                            D20 result is <strong>12.7</strong>,
+                            which puts your performance above the
+                            expected average of 10.5.
+                        </p>
+
+
+                        <div class="insight-tags">
+
+                            <span>
+                                🎯 8 Perfect Rolls
+                            </span>
+
+                            <span>
+                                🔥 24 High Rolls
+                            </span>
+
+                            <span>
+                                🎲 D20 Favorite
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =================================
+         JAVASCRIPT
+         ================================= -->
+
+    <script
+        src="../../js/utils.js"
+    ></script>
+
+
+    <script
+        src="../../components/sidebar/sidebar.js"
+    ></script>
+
+
+    <script
+        src="../../components/header/header.js"
+    ></script>
+
+
+    <!-- Chart.js -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js"
+    ></script>
+
+
+    <!-- Page JS -->
+
+    <script
+        src="statistics.js"
+    ></script>
+
+
+</body>
+
+</html>
