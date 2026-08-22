@@ -1,0 +1,816 @@
+/* =================================
+   DICEF0RGE HISTORY PAGE
+   ================================= */
+
+
+/* =================================
+   PAGE LAYOUT
+   ================================= */
+
+.history-page {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding-bottom: var(--space-12);
+}
+
+
+/* =================================
+   PAGE INTRO
+   ================================= */
+
+.history-intro {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: var(--space-6);
+
+    margin-bottom: var(--space-8);
+}
+
+
+.history-title {
+    margin-top: var(--space-2);
+
+    margin-bottom: var(--space-3);
+
+    color: var(--text-primary);
+
+    font-size: clamp(
+        2rem,
+        4vw,
+        2.8rem
+    );
+
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+
+.history-description {
+    color: var(--text-secondary);
+
+    font-size: var(--text-sm);
+
+    line-height: 1.6;
+}
+
+
+/* =================================
+   ROLL DICE BUTTON
+   ================================= */
+
+.history-roll-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: var(--space-2);
+
+    padding:
+        var(--space-3)
+        var(--space-5);
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple-primary),
+            var(--purple-secondary)
+        );
+
+    border-radius:
+        var(--radius-md);
+
+    box-shadow:
+        0 8px 22px
+        rgba(155, 77, 255, 0.20);
+
+    font-size: var(--text-sm);
+
+    font-weight: 700;
+
+    transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+
+.history-roll-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px
+        rgba(155, 77, 255, 0.30);
+}
+
+
+/* =================================
+   SUMMARY CARDS
+   ================================= */
+
+.history-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: var(--space-4);
+
+    margin-bottom: var(--space-8);
+}
+
+
+.history-summary-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-4);
+
+    padding: var(--space-5);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 22, 35, 0.95),
+            rgba(12, 14, 23, 0.98)
+        );
+
+    border:
+        1px solid var(--border-primary);
+
+    border-radius:
+        var(--radius-lg);
+
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+
+.history-summary-card:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        var(--purple-border);
+
+    box-shadow:
+        0 12px 28px
+        rgba(0, 0, 0, 0.30),
+
+        0 0 20px
+        rgba(155, 77, 255, 0.08);
+}
+
+
+/* =================================
+   SUMMARY ICON
+   ================================= */
+
+.history-summary-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        var(--purple-soft);
+
+    border:
+        1px solid var(--purple-border);
+
+    border-radius:
+        var(--radius-md);
+
+    font-size: 20px;
+
+    box-shadow:
+        0 0 15px
+        rgba(155, 77, 255, 0.08);
+}
+
+
+.history-summary-card span {
+    display: block;
+
+    margin-bottom: var(--space-1);
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.1px;
+}
+
+
+.history-summary-card strong {
+    display: block;
+
+    color: var(--text-primary);
+
+    font-size: 1.7rem;
+
+    font-weight: 800;
+}
+
+
+/* =================================
+   HISTORY TOOLBAR
+   ================================= */
+
+.history-toolbar {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: var(--space-5);
+
+    margin-bottom: var(--space-5);
+
+    padding:
+        var(--space-5);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 22, 35, 0.90),
+            rgba(12, 14, 23, 0.95)
+        );
+
+    border:
+        1px solid var(--border-primary);
+
+    border-radius:
+        var(--radius-lg);
+}
+
+
+.history-filter-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-3);
+}
+
+
+.filter-label {
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* =================================
+   FILTER BUTTONS
+   ================================= */
+
+.dice-filters {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: var(--space-2);
+}
+
+
+.history-filter {
+    min-width: 52px;
+
+    padding:
+        var(--space-2)
+        var(--space-3);
+
+    color: var(--text-secondary);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid var(--border-primary);
+
+    border-radius:
+        var(--radius-md);
+
+    cursor: pointer;
+
+    font-size: var(--text-xs);
+
+    font-weight: 600;
+
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.history-filter:hover {
+    color: var(--text-primary);
+
+    border-color:
+        var(--purple-border);
+
+    transform: translateY(-2px);
+}
+
+
+.history-filter.active {
+    color: var(--text-primary);
+
+    background:
+        var(--purple-soft);
+
+    border-color:
+        var(--purple-primary);
+
+    box-shadow:
+        0 0 12px
+        rgba(155, 77, 255, 0.10);
+}
+
+
+/* =================================
+   CLEAR HISTORY
+   ================================= */
+
+.clear-history-button {
+    padding:
+        var(--space-2)
+        var(--space-4);
+
+    color: var(--text-muted);
+
+    background:
+        transparent;
+
+    border:
+        1px solid var(--border-primary);
+
+    border-radius:
+        var(--radius-md);
+
+    cursor: pointer;
+
+    font-size: var(--text-xs);
+
+    font-weight: 600;
+
+    transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+
+.clear-history-button:hover {
+    color: #ff6b7a;
+
+    background:
+        rgba(255, 80, 100, 0.06);
+
+    border-color:
+        rgba(255, 80, 100, 0.30);
+}
+
+
+/* =================================
+   HISTORY TABLE
+   ================================= */
+
+.history-table-container {
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 22, 35, 0.95),
+            rgba(12, 14, 23, 0.98)
+        );
+
+    border:
+        1px solid var(--border-primary);
+
+    border-radius:
+        var(--radius-lg);
+}
+
+
+/* =================================
+   HISTORY ROW
+   ================================= */
+
+.history-row {
+    min-height: 76px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.7fr
+        0.8fr
+        1.3fr
+        1.3fr;
+
+    align-items: center;
+
+    gap: var(--space-4);
+
+    padding:
+        var(--space-3)
+        var(--space-5);
+
+    border-bottom:
+        1px solid var(--border-primary);
+}
+
+
+.history-row:last-child {
+    border-bottom: none;
+}
+
+
+/* =================================
+   TABLE HEADER
+   ================================= */
+
+.history-header {
+    min-height: 50px;
+
+    color: var(--text-muted);
+
+    background:
+        rgba(255, 255, 255, 0.015);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.1px;
+}
+
+
+/* =================================
+   HISTORY ITEM
+   ================================= */
+
+.history-item {
+    transition:
+        background-color var(--transition-fast);
+}
+
+
+.history-item:hover {
+    background:
+        rgba(155, 77, 255, 0.035);
+}
+
+
+/* =================================
+   DICE INFORMATION
+   ================================= */
+
+.history-dice {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-3);
+
+    color: var(--text-secondary);
+
+    font-size: var(--text-xs);
+}
+
+
+.history-dice-badge {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--purple-light);
+
+    background:
+        var(--purple-soft);
+
+    border:
+        1px solid var(--purple-border);
+
+    border-radius:
+        var(--radius-md);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 0 12px
+        rgba(155, 77, 255, 0.08);
+}
+
+
+/* =================================
+   RESULT
+   ================================= */
+
+.history-result {
+    color: var(--text-primary);
+
+    font-size: var(--text-xl);
+
+    font-weight: 800;
+}
+
+
+.history-result.critical,
+.history-result.perfect {
+    color: var(--purple-light);
+
+    text-shadow:
+        0 0 12px
+        rgba(155, 77, 255, 0.35);
+}
+
+
+/* =================================
+   ROLL TYPE
+   ================================= */
+
+.history-type {
+    color: var(--text-secondary);
+
+    font-size: var(--text-sm);
+}
+
+
+.history-type.critical,
+.history-type.perfect {
+    color: var(--purple-light);
+
+    font-weight: 600;
+}
+
+
+/* =================================
+   TIME
+   ================================= */
+
+.history-time {
+    color: var(--text-muted);
+
+    font-size: var(--text-xs);
+}
+
+
+/* =================================
+   EMPTY STATE
+   ================================= */
+
+.history-empty {
+    display: none;
+
+    padding:
+        var(--space-12)
+        var(--space-6);
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 22, 35, 0.95),
+            rgba(12, 14, 23, 0.98)
+        );
+
+    border:
+        1px solid var(--border-primary);
+
+    border-radius:
+        var(--radius-lg);
+}
+
+
+.history-empty.visible {
+    display: block;
+}
+
+
+.empty-icon {
+    margin-bottom: var(--space-4);
+
+    font-size: 42px;
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(155, 77, 255, 0.35)
+        );
+}
+
+
+.history-empty h3 {
+    margin-bottom: var(--space-2);
+
+    color: var(--text-primary);
+
+    font-size: var(--text-lg);
+}
+
+
+.history-empty p {
+    color: var(--text-muted);
+
+    font-size: var(--text-sm);
+}
+
+
+/* =================================
+   FILTER ANIMATION
+   ================================= */
+
+.history-item.hidden {
+    display: none;
+}
+
+
+.history-item.visible {
+    animation:
+        historyItemIn
+        0.25s
+        ease;
+}
+
+
+@keyframes historyItemIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =================================
+   RESPONSIVE
+   ================================= */
+
+@media (max-width: 900px) {
+
+    .history-summary {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+
+    .history-row {
+        grid-template-columns:
+            1.5fr
+            0.7fr
+            1.2fr
+            1.2fr;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .history-intro {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .history-roll-button {
+        width: 100%;
+    }
+
+
+    .history-toolbar {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .clear-history-button {
+        width: 100%;
+    }
+
+
+    .history-summary {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .history-header {
+        display: none;
+    }
+
+
+    .history-row {
+        grid-template-columns:
+            1fr
+            auto;
+
+        gap: var(--space-3);
+
+        padding:
+            var(--space-4);
+    }
+
+
+    .history-dice {
+        grid-column: 1;
+    }
+
+
+    .history-result {
+        grid-column: 2;
+    }
+
+
+    .history-type {
+        grid-column: 1;
+
+        padding-top:
+            var(--space-2);
+
+        font-size: var(--text-xs);
+    }
+
+
+    .history-time {
+        grid-column: 2;
+
+        padding-top:
+            var(--space-2);
+
+        text-align: right;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .history-page {
+        padding-bottom: var(--space-8);
+    }
+
+
+    .dice-filters {
+        width: 100%;
+    }
+
+
+    .history-filter {
+        flex: 1;
+    }
+
+
+    .history-dice span {
+        display: none;
+    }
+
+}
