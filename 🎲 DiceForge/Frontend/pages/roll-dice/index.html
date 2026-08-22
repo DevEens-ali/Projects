@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- =================================
+         DOCUMENT SETTINGS
+         ================================= -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Roll Dice | DiceForge</title>
+
+
+    <!-- =================================
+         GLOBAL CSS
+         ================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/reset.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+
+    <!-- =================================
+         COMPONENT CSS
+         ================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../../components/sidebar/sidebar.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../components/header/header.css"
+    >
+
+
+    <!-- =================================
+         PAGE CSS
+         ================================= -->
+
+    <link
+        rel="stylesheet"
+        href="roll-dice.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         SIDEBAR
+         ================================= -->
+
+    <div id="sidebar-container"></div>
+
+
+    <!-- =================================
+         MAIN APPLICATION
+         ================================= -->
+
+    <main class="app-main">
+
+
+        <!-- =================================
+             HEADER
+             ================================= -->
+
+        <div id="header-container"></div>
+
+
+        <!-- =================================
+             ROLL DICE CONTENT
+             ================================= -->
+
+        <section class="page-content">
+
+
+            <!-- =================================
+                 ROLL DICE HERO
+                 ================================= -->
+
+            <section class="roll-page">
+
+
+                <!-- Page Introduction -->
+
+                <div class="roll-intro">
+
+                    <span class="section-eyebrow">
+                        TEST YOUR FATE
+                    </span>
+
+                    <h2 class="roll-title">
+                        Roll the Dice
+                    </h2>
+
+                    <p class="roll-description">
+                        Choose your dice, make your roll,
+                        and let fate decide your result.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     DICE SELECTOR
+                     ================================= -->
+
+                <div class="dice-selector">
+
+
+                    <button
+                        class="dice-option"
+                        data-dice="4"
+                        type="button"
+                    >
+
+                        <span class="dice-option-number">
+                            D4
+                        </span>
+
+                        <span class="dice-option-label">
+                            4 Sides
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="dice-option"
+                        data-dice="6"
+                        type="button"
+                    >
+
+                        <span class="dice-option-number">
+                            D6
+                        </span>
+
+                        <span class="dice-option-label">
+                            6 Sides
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="dice-option"
+                        data-dice="8"
+                        type="button"
+                    >
+
+                        <span class="dice-option-number">
+                            D8
+                        </span>
+
+                        <span class="dice-option-label">
+                            8 Sides
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="dice-option"
+                        data-dice="10"
+                        type="button"
+                    >
+
+                        <span class="dice-option-number">
+                            D10
+                        </span>
+
+                        <span class="dice-option-label">
+                            10 Sides
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="dice-option"
+                        data-dice="12"
+                        type="button"
+                    >
+
+                        <span class="dice-option-number">
+                            D12
+                        </span>
+
+                        <span class="dice-option-label">
+                            12 Sides
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="dice-option active"
+                        data-dice="20"
+                        type="button"
+                    >
+
+                        <span class="dice-option-number">
+                            D20
+                        </span>
+
+                        <span class="dice-option-label">
+                            20 Sides
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- =================================
+                     MAIN DICE AREA
+                     ================================= -->
+
+                <div class="roll-stage">
+
+
+                    <!-- Dice Visual -->
+
+                    <div class="dice-display">
+
+                        <div class="dice-glow"></div>
+
+                        <div
+                            class="main-dice"
+                            id="main-dice"
+                        >
+                            D20
+                        </div>
+
+                    </div>
+
+
+                    <!-- Selected Dice -->
+
+                    <div class="selected-dice-info">
+
+                        <span class="selected-label">
+                            SELECTED DICE
+                        </span>
+
+                        <h3 id="selected-dice">
+                            D20
+                        </h3>
+
+                        <p id="selected-description">
+                            20-sided dice
+                        </p>
+
+                    </div>
+
+
+                    <!-- Roll Button -->
+
+                    <button
+                        class="roll-button"
+                        id="roll-button"
+                        type="button"
+                    >
+
+                        <span class="roll-button-icon">
+                            🎲
+                        </span>
+
+                        <span>
+                            Roll Dice
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- =================================
+                     RESULT AREA
+                     ================================= -->
+
+                <div
+                    class="roll-result-card"
+                    id="roll-result-card"
+                >
+
+                    <span class="result-label">
+                        YOUR RESULT
+                    </span>
+
+                    <div
+                        class="result-value"
+                        id="result-value"
+                    >
+                        —
+                    </div>
+
+                    <p
+                        class="result-message"
+                        id="result-message"
+                    >
+                        Your forged result will appear here.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =================================
+         JAVASCRIPT
+         ================================= -->
+
+    <script
+        src="../../js/utils.js"
+    ></script>
+
+
+    <script
+        src="../../components/sidebar/sidebar.js"
+    ></script>
+
+
+    <script
+        src="../../components/header/header.js"
+    ></script>
+
+
+    <script
+        src="roll-dice.js"
+    ></script>
+
+
+</body>
+
+</html>
