@@ -1,0 +1,435 @@
+    <!DOCTYPE html>
+
+    <html lang="en">
+
+    <head>
+
+        <!-- =================================
+            DOCUMENT SETTINGS
+            ================================= -->
+
+        <meta charset="UTF-8">
+
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        >
+
+        <title>DiceForge</title>
+
+
+        <!-- =================================
+            GLOBAL CSS
+            ================================= -->
+
+        <link
+            rel="stylesheet"
+            href="../../css/variables.css"
+        >
+
+        <link
+            rel="stylesheet"
+            href="../../css/reset.css"
+        >
+
+        <link
+            rel="stylesheet"
+            href="../../css/global.css"
+        >
+
+
+        <!-- =================================
+            COMPONENT CSS
+            ================================= -->
+
+        <link
+            rel="stylesheet"
+            href="../../components/sidebar/sidebar.css"
+        >
+
+        <link
+            rel="stylesheet"
+            href="../../components/header/header.css"
+        >
+
+
+        <!-- =================================
+            PAGE CSS
+            ================================= -->
+
+        <link
+            rel="stylesheet"
+            href="home.css"
+        >
+
+    </head>
+
+
+    <body>
+
+
+        <!-- =================================
+            SIDEBAR
+            Loaded dynamically by home.js
+            ================================= -->
+
+        <div id="sidebar-container"></div>
+
+
+        <!-- =================================
+            MAIN APPLICATION
+            ================================= -->
+
+        <main class="app-main">
+
+
+            <!-- =================================
+                HEADER
+                Loaded dynamically by home.js
+                ================================= -->
+
+            <div id="header-container"></div>
+
+
+            <!-- =================================
+                HOME PAGE CONTENT
+                ================================= -->
+            <!-- =================================
+        DICE ARSENAL
+        ================================= -->
+
+    <section class="dice-arsenal">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-eyebrow">
+                    YOUR COLLECTION
+                </span>
+
+                <h2 class="section-title">
+                    Dice Arsenal
+                </h2>
+
+                <p class="section-description">
+                    Choose your weapon and let fate decide.
+                </p>
+            </div>
+
+            <a
+                href="../roll-dice/index.html"
+                class="view-all-link"
+            >
+                View All
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <!-- Dice Cards -->
+
+        <div class="dice-grid">
+
+
+            <!-- D4 -->
+
+            <article
+                class="dice-card"
+                data-dice="4"
+            >
+
+                <div class="dice-card-visual">
+                    <div class="dice-placeholder">
+                        🎲
+                    </div>
+                </div>
+
+                <div class="dice-card-info">
+
+                    <h3>D4</h3>
+
+                    <p>4-sided dice</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- D6 -->
+
+            <article
+                class="dice-card"
+                data-dice="6"
+            >
+
+                <div class="dice-card-visual">
+                    <div class="dice-placeholder">
+                        🎲
+                    </div>
+                </div>
+
+                <div class="dice-card-info">
+
+                    <h3>D6</h3>
+
+                    <p>6-sided dice</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- D8 -->
+
+            <article
+                class="dice-card"
+                data-dice="8"
+            >
+
+                <div class="dice-card-visual">
+                    <div class="dice-placeholder">
+                        🎲
+                    </div>
+                </div>
+
+                <div class="dice-card-info">
+
+                    <h3>D8</h3>
+
+                    <p>8-sided dice</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- D10 -->
+
+            <article
+                class="dice-card"
+                data-dice="10"
+            >
+
+                <div class="dice-card-visual">
+                    <div class="dice-placeholder">
+                        🎲
+                    </div>
+                </div>
+
+                <div class="dice-card-info">
+
+                    <h3>D10</h3>
+
+                    <p>10-sided dice</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- D12 -->
+
+            <article
+                class="dice-card"
+                data-dice="12"
+            >
+
+                <div class="dice-card-visual">
+                    <div class="dice-placeholder">
+                        🎲
+                    </div>
+                </div>
+
+                <div class="dice-card-info">
+
+                    <h3>D12</h3>
+
+                    <p>12-sided dice</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- D20 -->
+
+            <article
+                class="dice-card"
+                data-dice="20"
+            >
+
+                <div class="dice-card-visual">
+                    <div class="dice-placeholder">
+                        🎲
+                    </div>
+                </div>
+
+                <div class="dice-card-info">
+
+                    <h3>D20</h3>
+
+                    <p>20-sided dice</p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+            <section class="page-content">
+
+
+                <!-- =================================
+                    HERO SECTION
+                    ================================= -->
+
+                <section class="home-hero">
+
+
+                    <!-- Hero Content -->
+
+                    <div class="hero-content">
+
+
+                        <!-- Eyebrow -->
+
+                        <span class="hero-eyebrow">
+                            🎲 THE FORGE AWAITS
+                        </span>
+
+
+                        <!-- Main Heading -->
+
+                        <h2 class="hero-title">
+
+                            Welcome back,
+
+                            <span>
+                                DiceMaster
+                            </span>
+
+                        </h2>
+
+
+                        <!-- Description -->
+
+                        <p class="hero-description">
+
+                            Ready to forge your next roll?
+
+                            Choose your dice, test your luck,
+                            and build your legend.
+
+                        </p>
+
+
+                        <!-- Hero Actions -->
+
+                        <div class="hero-actions">
+
+
+                            <!-- Roll Dice -->
+
+                            <a
+                                href="../roll-dice/index.html"
+                                class="btn-primary"
+                            >
+
+                                <span>
+                                    🎲
+                                </span>
+
+                                Roll the Dice
+
+                            </a>
+
+
+                            <!-- History -->
+
+                            <a
+                                href="../history/index.html"
+                                class="btn-secondary"
+                            >
+
+                                <span>
+                                    ◷
+                                </span>
+
+                                View History
+
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- =================================
+                        HERO VISUAL
+                        ================================= -->
+
+                    <div class="hero-visual">
+
+
+                        <!-- Purple Glow -->
+
+                        <div class="hero-glow"></div>
+
+
+                        <!-- Dice -->
+
+                        <div class="hero-dice">
+                            🎲
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </section>
+
+
+        </main>
+
+
+        <!-- =================================
+            GLOBAL JAVASCRIPT
+            ================================= -->
+
+        <script
+            src="../../js/utils.js"
+        ></script>
+
+
+        <!-- =================================
+            COMPONENT JAVASCRIPT
+            ================================= -->
+
+        <script
+            src="../../components/sidebar/sidebar.js"
+        ></script>
+
+        <script
+            src="../../components/header/header.js"
+        ></script>
+
+
+        <!-- =================================
+            PAGE JAVASCRIPT
+            ================================= -->
+
+        <script
+            src="home.js"
+        ></script>
+
+
+    </body>
+
+    </html>

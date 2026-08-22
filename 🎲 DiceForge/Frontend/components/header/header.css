@@ -1,0 +1,317 @@
+/* =================================
+   DICEF0RGE HEADER
+   ================================= */
+
+.app-header {
+    position: sticky;
+
+    top: 0;
+
+    height: var(--header-height);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        0
+        var(--space-8);
+
+    background:
+        rgba(5, 7, 13, 0.88);
+
+    border-bottom:
+        1px solid var(--border-primary);
+
+    backdrop-filter: blur(14px);
+
+    z-index: var(--z-header);
+}
+
+
+
+   /* HEADER CONTENT */
+  
+
+.header-content {
+    display: flex;
+
+    align-items: center;
+}
+
+
+.header-title-wrapper {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.header-title {
+    font-size: var(--text-2xl);
+
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+
+    color: var(--text-primary);
+}
+
+
+.header-subtitle {
+    font-size: var(--text-xs);
+
+    color: var(--text-muted);
+}
+
+
+
+   /* HEADER ACTIONS */
+ 
+
+.header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-3);
+}
+
+
+
+   /* HEADER ACTION BUTTON */
+  
+
+.header-action {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-secondary);
+
+    background:
+        var(--bg-tertiary);
+
+    border:
+        1px solid var(--border-primary);
+
+    border-radius:
+        var(--radius-md);
+
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.header-action:hover {
+    color: var(--text-primary);
+
+    background:
+        var(--purple-soft);
+
+    border-color:
+        var(--purple-border);
+
+    box-shadow:
+        0 0 14px rgba(155, 77, 255, 0.12);
+
+    transform: translateY(-1px);
+}
+
+
+.action-icon {
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+
+
+   /* PROFILE BUTTON */
+  
+
+.profile-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-3);
+
+    min-height: 44px;
+
+    padding:
+        4px
+        10px
+        4px
+        5px;
+
+    color: var(--text-primary);
+
+    background:
+        var(--bg-tertiary);
+
+    border:
+        1px solid var(--border-primary);
+
+    border-radius:
+        var(--radius-full);
+
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+
+.profile-button:hover {
+    background:
+        var(--bg-card-hover);
+
+    border-color:
+        var(--purple-border);
+
+    box-shadow:
+        0 0 14px rgba(155, 77, 255, 0.10);
+}
+
+
+
+   /* PROFILE AVATAR */
+  
+
+.profile-avatar {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: var(--text-primary);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple-primary),
+            var(--purple-secondary)
+        );
+
+    border-radius:
+        50%;
+
+    font-size:
+        var(--text-xs);
+
+    font-weight:
+        700;
+
+    box-shadow:
+        0 0 12px rgba(155, 77, 255, 0.28);
+}
+
+
+
+   /* PROFILE INFORMATION */
+  
+
+.profile-info {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 1px;
+}
+
+
+.profile-name {
+    font-size:
+        var(--text-sm);
+
+    font-weight:
+        600;
+}
+
+
+.profile-status {
+    font-size:
+        10px;
+
+    color:
+        var(--text-muted);
+}
+
+
+
+   /* PROFILE ARROW */
+  
+
+.profile-arrow {
+    margin-left:
+        var(--space-1);
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        12px;
+}
+
+
+
+   /* RESPONSIVE */
+
+
+@media (max-width: 900px) {
+
+    .app-header {
+        padding:
+            0
+            var(--space-5);
+    }
+
+    .profile-info,
+    .profile-arrow {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header-title {
+        font-size:
+            var(--text-xl);
+    }
+
+    .header-subtitle {
+        display: none;
+    }
+
+    .header-actions {
+        gap:
+            var(--space-2);
+    }
+
+    .header-action {
+        width: 36px;
+        height: 36px;
+    }
+
+}
