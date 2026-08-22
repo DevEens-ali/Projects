@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- =================================
+         DOCUMENT SETTINGS
+         ================================= -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>History | DiceForge</title>
+
+
+    <!-- =================================
+         GLOBAL CSS
+         ================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/reset.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+
+    <!-- =================================
+         COMPONENT CSS
+         ================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../../components/sidebar/sidebar.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../components/header/header.css"
+    >
+
+
+    <!-- =================================
+         PAGE CSS
+         ================================= -->
+
+    <link
+        rel="stylesheet"
+        href="history.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         SIDEBAR
+         ================================= -->
+
+    <div id="sidebar-container"></div>
+
+
+    <!-- =================================
+         MAIN APPLICATION
+         ================================= -->
+
+    <main class="app-main">
+
+
+        <!-- =================================
+             HEADER
+             ================================= -->
+
+        <div id="header-container"></div>
+
+
+        <!-- =================================
+             PAGE CONTENT
+             ================================= -->
+
+        <section class="page-content">
+
+
+            <div class="history-page">
+
+
+                <!-- =================================
+                     PAGE INTRO
+                     ================================= -->
+
+                <div class="history-intro">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            YOUR JOURNEY
+                        </span>
+
+                        <h1 class="history-title">
+                            Roll History
+                        </h1>
+
+                        <p class="history-description">
+                            Review every roll you've forged
+                            in the DiceForge.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="../roll-dice/index.html"
+                        class="history-roll-button"
+                    >
+                        🎲 Roll Dice
+                    </a>
+
+                </div>
+
+
+                <!-- =================================
+                     SUMMARY CARDS
+                     ================================= -->
+
+                <div class="history-summary">
+
+
+                    <!-- Total Rolls -->
+
+                    <article class="history-summary-card">
+
+                        <div class="history-summary-icon">
+                            🎲
+                        </div>
+
+                        <div>
+
+                            <span>
+                                TOTAL ROLLS
+                            </span>
+
+                            <strong id="history-total-rolls">
+                                128
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Highest Roll -->
+
+                    <article class="history-summary-card">
+
+                        <div class="history-summary-icon">
+                            🏆
+                        </div>
+
+                        <div>
+
+                            <span>
+                                HIGHEST ROLL
+                            </span>
+
+                            <strong id="history-highest-roll">
+                                20
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Average -->
+
+                    <article class="history-summary-card">
+
+                        <div class="history-summary-icon">
+                            📈
+                        </div>
+
+                        <div>
+
+                            <span>
+                                AVERAGE ROLL
+                            </span>
+
+                            <strong id="history-average-roll">
+                                11.4
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- =================================
+                     FILTERS
+                     ================================= -->
+
+                <div class="history-toolbar">
+
+
+                    <div class="history-filter-group">
+
+                        <span class="filter-label">
+                            FILTER BY DICE
+                        </span>
+
+
+                        <div class="dice-filters">
+
+                            <button
+                                class="history-filter active"
+                                data-filter="all"
+                                type="button"
+                            >
+                                All
+                            </button>
+
+
+                            <button
+                                class="history-filter"
+                                data-filter="4"
+                                type="button"
+                            >
+                                D4
+                            </button>
+
+
+                            <button
+                                class="history-filter"
+                                data-filter="6"
+                                type="button"
+                            >
+                                D6
+                            </button>
+
+
+                            <button
+                                class="history-filter"
+                                data-filter="8"
+                                type="button"
+                            >
+                                D8
+                            </button>
+
+
+                            <button
+                                class="history-filter"
+                                data-filter="10"
+                                type="button"
+                            >
+                                D10
+                            </button>
+
+
+                            <button
+                                class="history-filter"
+                                data-filter="12"
+                                type="button"
+                            >
+                                D12
+                            </button>
+
+
+                            <button
+                                class="history-filter"
+                                data-filter="20"
+                                type="button"
+                            >
+                                D20
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Clear Button -->
+
+                    <button
+                        class="clear-history-button"
+                        id="clear-history"
+                        type="button"
+                    >
+                        Clear History
+                    </button>
+
+
+                </div>
+
+
+                <!-- =================================
+                     HISTORY TABLE
+                     ================================= -->
+
+                <div class="history-table-container">
+
+
+                    <!-- Table Header -->
+
+                    <div class="history-row history-header">
+
+                        <span>
+                            DICE
+                        </span>
+
+                        <span>
+                            RESULT
+                        </span>
+
+                        <span>
+                            TYPE
+                        </span>
+
+                        <span>
+                            DATE & TIME
+                        </span>
+
+                    </div>
+
+
+                    <!-- =================================
+                         HISTORY ITEM 1
+                         ================================= -->
+
+                    <div
+                        class="history-row history-item"
+                        data-dice="20"
+                    >
+
+                        <div class="history-dice">
+
+                            <div class="history-dice-badge">
+                                D20
+                            </div>
+
+                            <span>
+                                20-sided dice
+                            </span>
+
+                        </div>
+
+
+                        <strong class="history-result perfect">
+                            20
+                        </strong>
+
+
+                        <span class="history-type perfect">
+                            🎯 Perfect Roll
+                        </span>
+
+
+                        <span class="history-time">
+                            Today, 02:14 PM
+                        </span>
+
+                    </div>
+
+
+                    <!-- =================================
+                         HISTORY ITEM 2
+                         ================================= -->
+
+                    <div
+                        class="history-row history-item"
+                        data-dice="6"
+                    >
+
+                        <div class="history-dice">
+
+                            <div class="history-dice-badge">
+                                D6
+                            </div>
+
+                            <span>
+                                6-sided dice
+                            </span>
+
+                        </div>
+
+
+                        <strong class="history-result">
+                            4
+                        </strong>
+
+
+                        <span class="history-type">
+                            Normal Roll
+                        </span>
+
+
+                        <span class="history-time">
+                            Today, 02:09 PM
+                        </span>
+
+                    </div>
+
+
+                    <!-- =================================
+                         HISTORY ITEM 3
+                         ================================= -->
+
+                    <div
+                        class="history-row history-item"
+                        data-dice="12"
+                    >
+
+                        <div class="history-dice">
+
+                            <div class="history-dice-badge">
+                                D12
+                            </div>
+
+                            <span>
+                                12-sided dice
+                            </span>
+
+                        </div>
+
+
+                        <strong class="history-result">
+                            9
+                        </strong>
+
+
+                        <span class="history-type">
+                            Normal Roll
+                        </span>
+
+
+                        <span class="history-time">
+                            Today, 01:58 PM
+                        </span>
+
+                    </div>
+
+
+                    <!-- =================================
+                         HISTORY ITEM 4
+                         ================================= -->
+
+                    <div
+                        class="history-row history-item"
+                        data-dice="20"
+                    >
+
+                        <div class="history-dice">
+
+                            <div class="history-dice-badge">
+                                D20
+                            </div>
+
+                            <span>
+                                20-sided dice
+                            </span>
+
+                        </div>
+
+
+                        <strong class="history-result critical">
+                            18
+                        </strong>
+
+
+                        <span class="history-type critical">
+                            🔥 High Roll
+                        </span>
+
+
+                        <span class="history-time">
+                            Today, 01:45 PM
+                        </span>
+
+                    </div>
+
+
+                    <!-- =================================
+                         HISTORY ITEM 5
+                         ================================= -->
+
+                    <div
+                        class="history-row history-item"
+                        data-dice="8"
+                    >
+
+                        <div class="history-dice">
+
+                            <div class="history-dice-badge">
+                                D8
+                            </div>
+
+                            <span>
+                                8-sided dice
+                            </span>
+
+                        </div>
+
+
+                        <strong class="history-result">
+                            6
+                        </strong>
+
+
+                        <span class="history-type">
+                            Normal Roll
+                        </span>
+
+
+                        <span class="history-time">
+                            Today, 01:31 PM
+                        </span>
+
+                    </div>
+
+
+                    <!-- =================================
+                         HISTORY ITEM 6
+                         ================================= -->
+
+                    <div
+                        class="history-row history-item"
+                        data-dice="4"
+                    >
+
+                        <div class="history-dice">
+
+                            <div class="history-dice-badge">
+                                D4
+                            </div>
+
+                            <span>
+                                4-sided dice
+                            </span>
+
+                        </div>
+
+
+                        <strong class="history-result">
+                            2
+                        </strong>
+
+
+                        <span class="history-type">
+                            Normal Roll
+                        </span>
+
+
+                        <span class="history-time">
+                            Today, 01:22 PM
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================
+                     EMPTY STATE
+                     ================================= -->
+
+                <div
+                    class="history-empty"
+                    id="history-empty"
+                >
+
+                    <div class="empty-icon">
+                        🎲
+                    </div>
+
+                    <h3>
+                        No Rolls Found
+                    </h3>
+
+                    <p>
+                        No rolls match the selected filter.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =================================
+         JAVASCRIPT
+         ================================= -->
+
+    <script
+        src="../../js/utils.js"
+    ></script>
+
+
+    <script
+        src="../../components/sidebar/sidebar.js"
+    ></script>
+
+
+    <script
+        src="../../components/header/header.js"
+    ></script>
+
+
+    <script
+        src="history.js"
+    ></script>
+
+
+</body>
+
+</html>
